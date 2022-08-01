@@ -1,0 +1,7 @@
+analyzer:
+
+  strong-mode:
+    implicit-dynamic: false
+    implicit-casts: false
+
+include: package:lints/recommended.yaml
