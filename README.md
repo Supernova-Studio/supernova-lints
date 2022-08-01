@@ -19,7 +19,7 @@ List of currently implemented rules:
 
 - [missing_this](#missing_this)
 
-#### [missing_this]
+#### missing_this
 
 Requires `this` expression to be placed in all possible cases.
 
@@ -70,8 +70,8 @@ analyzer:
     - custom_lint
 ```
 
-3. Restart your IDE
+3. (Optional) Restart your IDE
 
 ## Additional information
 
-Feedback and contribution are always welcome on the [GitHub repo](https://github.com/Supernova-Studio/supernova-lints).
+Feedback and contribution are always welcome at the [GitHub repo](https://github.com/Supernova-Studio/supernova-lints).
