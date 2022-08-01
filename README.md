@@ -70,7 +70,7 @@ analyzer:
     - custom_lint
 ```
 
-3. (Optional) Restart your IDE
+3. Restart your IDE
 
 ## Additional information
 

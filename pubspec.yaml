@@ -1,9 +1,11 @@
 name: supernova_lints
-description: Custom lints used in Supernova.
-version: 1.0.0
+description: Custom lints rules used in Supernova.
+homepage: https://github.com/Supernova-Studio/supernova-lints
+repository: https://github.com/Supernova-Studio/supernova-lints
+version: 0.0.1
 
 environment:
-  sdk: '>=2.17.1 <3.0.0'
+  sdk: '>=2.17.0 <3.0.0'
 
 dependencies:
   custom_lint_builder: ^0.0.9+1
