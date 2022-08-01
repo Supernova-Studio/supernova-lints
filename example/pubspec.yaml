@@ -2,7 +2,6 @@ name: supernova_lints_example
 version: 1.0.0
 publish_to: none
 
-#todo move to root level?
 environment:
   sdk: '>=2.17.1 <3.0.0'
 
@@ -11,6 +10,5 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  custom_lint: ^0.0.9+1
   supernova_lints:
     path: ../

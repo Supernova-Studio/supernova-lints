@@ -7,7 +7,9 @@ import 'package:analyzer/src/dart/element/member.dart';
 import '../lint_violation_reporter.dart';
 import 'lint_rule.dart';
 
-//todo comment - ignored cases
+/// Requires [this] expression to be placed in all possible cases.
+///
+/// Exception: [State.context] and [State.setState] don't require this expression.
 class MissingThisRule extends LintRule {
   const MissingThisRule()
       : super(

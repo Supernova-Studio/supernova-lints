@@ -7,39 +7,35 @@ part 'missing_this_example.g.dart';
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
 class Model {
-  final String property1;
-  final String property2;
+  final String property;
 
-  String get property1Getter => property1;
-
-  String get property2Getter => this.property2;
+  String get getter => property + this.property;
 
   Model({
-    required this.property1,
-    required this.property2,
+    required this.property,
   });
 
-  String firstMethod() {
-    return property1 + this.property2;
+  String method1() {
+    return property + this.property;
   }
 
-  String secondMethod() {
-    return property1Getter + this.property2Getter;
+  String method2() {
+    return getter + this.getter;
   }
 
-  String thirdMethod() {
-    return firstMethod() + this.firstMethod();
+  String method3() {
+    return method1() + this.method1();
   }
 
-  String fourthMethod(String? arg1, String arg2) {
+  String method4(String? arg1, String arg2) {
     return (arg1 ?? "") + arg2;
   }
 
-  bool fifthMethod(Type type) {
+  bool method5(Type type) {
     return type == String;
   }
 
-  bool sixthMethod<T>() {
+  bool method6<T>() {
     return T == String;
   }
 }
@@ -49,11 +45,11 @@ class WrappingModel {
 
   WrappingModel(this.model);
 
-  String someMethod1() {
-    return model.property1 + topLevelMember + topLevelFunction();
+  String method1() {
+    return model.property + topLevelMember + topLevelFunction();
   }
 
-  String someMethod2() {
+  String method2() {
     final paint = StringBuffer();
     paint
       ..write("test1")
@@ -126,7 +122,7 @@ mixin ModelMixin on Object {
 }
 
 //
-/// Ignore: setState and context
+/// Ignores [setState] and [context]
 // --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
 
 class CustomWidget extends StatefulWidget {

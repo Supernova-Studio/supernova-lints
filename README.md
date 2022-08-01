@@ -11,29 +11,65 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Provides custom lint rules broadly used in [supernova.io](https://supernova.io/).
 
-## Getting started
+List of currently implemented rules:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### [missing_this]
+
+Requires [this] expression to be placed in all possible cases.
+
+Exception: usages of [State.context](https://api.flutter.dev/flutter/widgets/State/context.html) and [State.setState](https://api.flutter.dev/flutter/widgets/State/setState.html) don't require this expression.
+
+GOOD:
+
+```dart
+class Model {
+  String? property;
+  
+  String? get getter => this.property;
+  
+  String? method() {
+    return this.property;  
+  }
+}
+```
+
+BAD:
+
+```dart
+class Model {
+  String? property;
+  
+  String? get getter => property;
+
+  String? method() {
+    return property;
+  }
+}
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+1. Add the following to your `pubspec.yaml` file:
 
-```dart
-const like = 'sample';
 ```
+dev_dependencies:
+  supernova_lints: ^0.0.1
+```
+
+2. Add the following to your `analysis_options.yaml` file:
+
+```
+analyzer:
+  plugins:
+    - custom_lint
+```
+
+3. Restart your IDE
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Feedback and contribution are always welcome on the [GitHub repo](https://github.com/Supernova-Studio/supernova-lints).
