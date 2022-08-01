@@ -6,8 +6,6 @@ abstract class LintRule {
   final String code;
   final String message;
 
-  //todo add severity
-
   const LintRule({
     required this.code,
     required this.message,

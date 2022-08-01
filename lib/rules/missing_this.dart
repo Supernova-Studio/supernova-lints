@@ -7,7 +7,6 @@ import 'package:supernova_lints/lint_violation_reporter.dart';
 import 'lint_rule.dart';
 
 //todo comment - ignored cases
-//todo readme
 class MissingThisRule extends LintRule {
   const MissingThisRule()
       : super(

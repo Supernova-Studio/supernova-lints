@@ -5,7 +5,7 @@ import 'package:supernova_lints/rules/missing_this.dart';
 import 'lint_violation_reporter.dart';
 import 'linter_visitor.dart';
 
-final lintRules = const [
+final _lintRules = const [
   MissingThisRule(),
 ];
 
@@ -22,7 +22,7 @@ class CustomLintRunner extends PluginBase {
     if (fullPath.contains("/.symlinks/plugins")) return;
 
     final violationReporter = LintViolationReporter(resolvedUnitResult);
-    unit.accept(LinterVisitor(lintRules, violationReporter));
+    unit.accept(LinterVisitor(_lintRules, violationReporter));
 
     for (final reportedViolation in violationReporter.reportedViolations) {
       yield reportedViolation;
