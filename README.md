@@ -17,11 +17,13 @@ Provides custom lint rules broadly used in [supernova.io](https://supernova.io/)
 
 List of currently implemented rules:
 
-### [missing_this]
+- [missing_this](#missing_this)
 
-Requires [this] expression to be placed in all possible cases.
+#### [missing_this]
 
-Exception: usages of [State.context](https://api.flutter.dev/flutter/widgets/State/context.html) and [State.setState](https://api.flutter.dev/flutter/widgets/State/setState.html) don't require this expression.
+Requires `this` expression to be placed in all possible cases.
+
+Exception: usages of [State.context](https://api.flutter.dev/flutter/widgets/State/context.html) and [State.setState](https://api.flutter.dev/flutter/widgets/State/setState.html) don't require `this` expression.
 
 GOOD:
 
