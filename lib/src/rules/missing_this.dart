@@ -1,9 +1,10 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/element.dart';
+
 // ignore: implementation_imports
 import 'package:analyzer/src/dart/element/member.dart';
-import 'package:supernova_lints/lint_violation_reporter.dart';
 
+import '../lint_violation_reporter.dart';
 import 'lint_rule.dart';
 
 //todo comment - ignored cases

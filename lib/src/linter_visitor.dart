@@ -4,10 +4,7 @@ import 'package:analyzer/dart/ast/visitor.dart';
 import 'lint_violation_reporter.dart';
 import 'rules/lint_rule.dart';
 
-typedef NodeSubscription<T extends AstNode> = void Function(
-    T node, LintViolationReporter reporter);
-
-//todo comment
+/// Visitor that allows [LintRule] entities to subscribe to certain AST nodes.
 class LinterVisitor extends RecursiveAstVisitor<void> {
   final Iterable<LintRule> rules;
   final LintViolationReporter _violationReporter;

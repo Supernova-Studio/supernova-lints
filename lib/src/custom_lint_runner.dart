@@ -1,9 +1,9 @@
 import 'package:analyzer/dart/analysis/results.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
-import 'package:supernova_lints/rules/missing_this.dart';
 
 import 'lint_violation_reporter.dart';
 import 'linter_visitor.dart';
+import 'rules/missing_this.dart';
 
 final _lintRules = const [
   MissingThisRule(),
