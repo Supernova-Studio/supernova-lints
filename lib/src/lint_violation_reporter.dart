@@ -39,7 +39,7 @@ class LintViolationReporter {
               : (Lint lint) {
                   return _errorFixesStream(
                     lint,
-                    quickFixName: "",
+                    quickFixName: quickFixName,
                     quickFixBuilder: quickFixBuilder,
                   );
                 }),

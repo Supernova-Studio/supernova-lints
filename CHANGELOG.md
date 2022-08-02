@@ -1,3 +1,7 @@
+## 0.0.3
+
+- Displaying correct quick fix message.
+
 ## 0.0.2
 
 - Fixing runs of a hosted package.
