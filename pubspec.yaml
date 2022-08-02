@@ -2,7 +2,7 @@ name: supernova_lints
 description: Custom lints rules used in Supernova.
 homepage: https://github.com/Supernova-Studio/supernova-lints
 repository: https://github.com/Supernova-Studio/supernova-lints
-version: 0.0.1
+version: 0.0.2
 
 environment:
   sdk: '>=2.17.0 <3.0.0'
