@@ -44,9 +44,9 @@ class MissingThisRule extends LintRule {
     final callsTopLevelMember =
         (element is ExecutableElement) ? element.isStatic : false;
     final callsLocalVariable = element is LocalVariableElement;
-    final callsNestedFunction = (element is FunctionElement)
-        ? element.declaration.enclosingElement2 == element.enclosingElement2
-        : false;
+    final callsNestedFunction =
+        element is FunctionElement &&
+        element.declaration.enclosingElement3 == element.enclosingElement3;
 
     final hasThis = node.staticType == null;
     final isInvocation = !node.isQualified;
@@ -82,7 +82,7 @@ class MissingThisRule extends LintRule {
 
     if (element is MethodMember) {
       return element.name == "setState" &&
-          element.enclosingElement2.displayName == "State";
+          element.enclosingElement3.displayName == "State";
     }
 
     return false;
