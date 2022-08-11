@@ -3,13 +3,13 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-43.0.0",
+      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-44.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-4.3.1",
+      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-4.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -105,7 +105,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0",
+      "rootUri": "file:///Users/krasnov/sdk/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,7 +206,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2022-08-02T22:38:47.018057Z",
+  "generated": "2022-08-10T16:20:56.323493Z",
   "generator": "pub",
   "generatorVersion": "2.17.1"
 }

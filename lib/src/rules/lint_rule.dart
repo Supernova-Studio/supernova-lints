@@ -22,4 +22,9 @@ abstract class LintRule {
   void onPrefixedIdentifier(PrefixedIdentifier node, LintViolationReporter reporter) {}
 
   void onSimpleIdentifier(SimpleIdentifier node, LintViolationReporter reporter) {}
+
+  void onSimpleStringLiteral(SimpleStringLiteral node, LintViolationReporter reporter) {}
+
+  void onStringInterpolation(StringInterpolation node, LintViolationReporter reporter) {}
+
 }

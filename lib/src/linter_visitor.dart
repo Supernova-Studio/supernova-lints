@@ -53,4 +53,22 @@ class LinterVisitor extends RecursiveAstVisitor<void> {
 
     super.visitSimpleIdentifier(node);
   }
+
+  @override
+  void visitSimpleStringLiteral(SimpleStringLiteral node) {
+    for (final rule in rules) {
+      rule.onSimpleStringLiteral(node, _violationReporter);
+    }
+
+    super.visitSimpleStringLiteral(node);
+  }
+
+  @override
+  void visitStringInterpolation(StringInterpolation node) {
+    for (final rule in rules) {
+      rule.onStringInterpolation(node, _violationReporter);
+    }
+
+    super.visitStringInterpolation(node);
+  }
 }

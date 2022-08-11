@@ -1,5 +1,6 @@
 import 'package:analyzer/dart/analysis/results.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:supernova_lints/src/rules/prefer_double_quotes_except_directives.dart';
 
 import 'lint_violation_reporter.dart';
 import 'linter_visitor.dart';
@@ -7,6 +8,7 @@ import 'rules/missing_this.dart';
 
 final _lintRules = const [
   MissingThisRule(),
+  PreferDoubleQuotesExceptDirectives(),
 ];
 
 class CustomLintRunner extends PluginBase {
