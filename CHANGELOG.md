@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Manually defined platforms
+
 ## 0.0.5
 
 - Extending README.md
