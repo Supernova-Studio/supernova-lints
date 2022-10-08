@@ -1,12 +1,10 @@
 import 'package:analyzer/dart/ast/ast.dart';
+import 'package:supernova_lints/src/lint_violation_reporter.dart';
+import 'package:supernova_lints/src/rules/lint_rule.dart';
 
-import '../lint_violation_reporter.dart';
-import 'lint_rule.dart';
-
-// TODO Readme
 /// Requires double quotes for string literals.
 ///
-/// Exception: directives (import/part/part of/export/library) can use single quotes.
+/// Exception: directives (`import`, `part`, `part of`, `export`, `library`) can use single quotes.
 class PreferDoubleQuotesExceptDirectives extends LintRule {
   const PreferDoubleQuotesExceptDirectives()
       : super(
@@ -44,6 +42,6 @@ class PreferDoubleQuotesExceptDirectives extends LintRule {
   }
 
   bool _isIgnoredLiteral(SingleStringLiteral node) {
-    return node.parent is Directive;
+    return node.thisOrAncestorOfType<Directive>() != null;
   }
 }

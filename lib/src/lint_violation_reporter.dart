@@ -4,8 +4,7 @@ import 'package:analyzer_plugin/protocol/protocol_generated.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_dart.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
-
-import 'rules/lint_rule.dart';
+import 'package:supernova_lints/src/rules/lint_rule.dart';
 
 class LintViolationReporter {
   final ResolvedUnitResult _resolvedUnitResult;
@@ -28,21 +27,22 @@ class LintViolationReporter {
 
     _reportedViolations.add(
       Lint(
-          code: rule.code,
-          message: rule.message,
-          location: _resolvedUnitResult.lintLocationFromOffset(
-            node.offset,
-            length: node.length,
-          ),
-          getAnalysisErrorFixes: quickFixBuilder == null
-              ? null
-              : (Lint lint) {
-                  return _errorFixesStream(
-                    lint,
-                    quickFixName: quickFixName,
-                    quickFixBuilder: quickFixBuilder,
-                  );
-                }),
+        code: rule.code,
+        message: rule.message,
+        location: _resolvedUnitResult.lintLocationFromOffset(
+          node.offset,
+          length: node.length,
+        ),
+        getAnalysisErrorFixes: quickFixBuilder == null
+            ? null
+            : (Lint lint) {
+                return _errorFixesStream(
+                  lint,
+                  quickFixName: quickFixName,
+                  quickFixBuilder: quickFixBuilder,
+                );
+              },
+      ),
     );
   }
 

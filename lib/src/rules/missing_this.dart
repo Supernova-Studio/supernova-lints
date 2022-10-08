@@ -4,8 +4,8 @@ import 'package:analyzer/dart/element/element.dart';
 // ignore: implementation_imports
 import 'package:analyzer/src/dart/element/member.dart';
 
-import '../lint_violation_reporter.dart';
-import 'lint_rule.dart';
+import 'package:supernova_lints/src/lint_violation_reporter.dart';
+import 'package:supernova_lints/src/rules/lint_rule.dart';
 
 /// Requires [this] expression to be placed in all possible cases.
 ///
@@ -23,7 +23,9 @@ class MissingThisRule extends LintRule {
 
   @override
   void onSimpleIdentifier(
-      SimpleIdentifier node, LintViolationReporter reporter) {
+    SimpleIdentifier node,
+    LintViolationReporter reporter,
+  ) {
     _validate(node, reporter);
   }
 
@@ -37,30 +39,19 @@ class MissingThisRule extends LintRule {
   ) {
     final element = node.staticElement;
 
-    final isIgnoredElement =
-        element != null ? _isIgnoredElement(element) : false;
+    final isIgnoredElement = element != null && _isIgnoredElement(element);
     if (isIgnoredElement) return;
 
-    final callsTopLevelMember =
-        (element is ExecutableElement) ? element.isStatic : false;
+    final callsTopLevelMember = element is ExecutableElement && element.isStatic;
     final callsLocalVariable = element is LocalVariableElement;
-    final callsNestedFunction =
-        element is FunctionElement &&
-        element.declaration.enclosingElement3 == element.enclosingElement3;
+    final callsNestedFunction = element is FunctionElement && element.declaration.enclosingElement3 == element.enclosingElement3;
 
     final hasThis = node.staticType == null;
     final isInvocation = !node.isQualified;
-    final isParameter =
-        element is ParameterElement || element is TypeParameterElement;
+    final isParameter = element is ParameterElement || element is TypeParameterElement;
     final isClass = element is ClassElement;
 
-    if (isInvocation &&
-        !hasThis &&
-        !callsTopLevelMember &&
-        !callsLocalVariable &&
-        !isParameter &&
-        !isClass &&
-        !callsNestedFunction) {
+    if (isInvocation && !hasThis && !callsTopLevelMember && !callsLocalVariable && !isParameter && !isClass && !callsNestedFunction) {
       reporter.report(
         this,
         node,
@@ -76,13 +67,11 @@ class MissingThisRule extends LintRule {
 
   bool _isIgnoredElement(Element element) {
     if (element is PropertyAccessorElement) {
-      return element.type.returnType.getDisplayString(withNullability: false) ==
-          "BuildContext";
+      return element.type.returnType.getDisplayString(withNullability: false) == "BuildContext";
     }
 
     if (element is MethodMember) {
-      return element.name == "setState" &&
-          element.enclosingElement3.displayName == "State";
+      return element.name == "setState" && element.enclosingElement3.displayName == "State";
     }
 
     return false;

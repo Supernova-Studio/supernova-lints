@@ -1,6 +1,5 @@
 import 'package:analyzer/dart/ast/ast.dart';
-
-import '../lint_violation_reporter.dart';
+import 'package:supernova_lints/src/lint_violation_reporter.dart';
 
 abstract class LintRule {
   final String code;
@@ -26,5 +25,4 @@ abstract class LintRule {
   void onSimpleStringLiteral(SimpleStringLiteral node, LintViolationReporter reporter) {}
 
   void onStringInterpolation(StringInterpolation node, LintViolationReporter reporter) {}
-
 }
