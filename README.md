@@ -18,6 +18,7 @@ Provides custom lint rules broadly used in [supernova.io](https://supernova.io/)
 List of currently implemented rules:
 
 - [missing_this](#missing_this)
+- [prefer_double_quotes_except_directives](#prefer_double_quotes_except_directives)
 
 #### missing_this
 
@@ -53,13 +54,31 @@ class Model {
 }
 ```
 
+#### prefer_double_quotes_except_directives
+
+Prefer double quotes over single quotes.
+
+Exceptions: directives (`import`, `part`, `part of`, `export`, `library`).
+
+GOOD:
+
+```dart
+final String doubleQuotedString = "";
+```
+
+BAD:
+
+```dart
+final String singleQuotedString = '';
+```
+
 ## Usage
 
 1. Add the following to your `pubspec.yaml` file:
 
 ```
 dev_dependencies:
-  supernova_lints: ^0.0.1
+  supernova_lints: ^0.0.5
 ```
 
 2. Add the following to your `analysis_options.yaml` file:

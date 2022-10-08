@@ -1,3 +1,7 @@
+## 0.0.5
+
+- Extending README.md
+
 ## 0.0.4
 
 - Bumping dependencies.
